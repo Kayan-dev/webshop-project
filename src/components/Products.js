@@ -10,7 +10,7 @@ export default function PostsFeed() {
       const response = await axios.get(`http://localhost:4000/products`);
       console.log("res", response);
 
-      const products = response.data.categories;
+      const products = response.data;
       console.log("products", products);
       setData(products);
     }
@@ -22,8 +22,9 @@ export default function PostsFeed() {
     <div>
       <h2>Products</h2>
       <p>
-        {data.map((product) => {
-          return <Link path="product/:id">{product.name}</Link>;
+        {data.map((product, i) => {
+          //make link for each product to details page
+          return <p key={product.id}>{product.name} </p>;
         })}
       </p>
     </div>
