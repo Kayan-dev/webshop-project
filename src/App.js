@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/" component={HomePage} />
+        <Route path="/products" />
         <h1>Hello efe</h1>
       </Switch>
     </div>
